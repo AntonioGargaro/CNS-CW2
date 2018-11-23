@@ -1,0 +1,4 @@
+grant codeBase "http://www2.macs.hw.ac.uk/~ajg2/-" {
+	permission java.security.AllPermission;
+  
+  };

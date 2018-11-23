@@ -1,0 +1,26 @@
+\section{RIA File Signatures \& Verification With PGP Keys}
+
+This section discusses how the file signing and verification process works. We used the BouncyCastle package which uses a PGP private key and the file requiring signed, followed by the public key for verification. Below is the order of operations,
+
+\subsection{Sign}
+\begin{enumerate}
+    \item A file, private key and passphrase are passed into the Sign()
+    \item Adds BouncyCastle to security provider
+    \item Input files are read in
+    \item Private key ring is iterated over to obtain private key
+    \item File is signed with private key
+    \item Signed file is outputted to input file directory
+    \item Displayed on RIA
+\end{enumerate}
+
+
+\subsection{Verify}
+\begin{enumerate}
+    \item The file, the signed file and public key and is into the Verify()
+    \item Adds BouncyCastle to security provider
+    \item Input files are read in
+    \item Public key ring is iterated over to obtain public key
+    \item Signed file is verified with public key
+    \item Boolean is returned
+    \item Displayed on RIA
+\end{enumerate}

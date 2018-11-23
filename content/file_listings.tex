@@ -1,0 +1,58 @@
+\pagebreak
+\section{File Listings}
+
+\subsection{Certificates}
+
+\subsubsection{PGP Certificates}
+\begin{enumerate}
+    \item Public keys generated for Jason and Antonio
+    \item Private keys generated for Jason and Antonio
+    \item Images added to keys
+    \item Keys uploaded to https://keyserver.pgp.com/
+    
+\end{enumerate}
+
+\subsubsection{X.509 Certificates}
+\begin{enumerate}
+    \item Local CA - Generated with Antonio's details and the basic constraint extension seen in figure \ref{fig:x509_creation:ca}.
+    \item X.509 Certificate - Generated with Jason's details seen in figure \ref{fig:x509_creation:jason}. This file was signed by the CA, seen in figure \ref{fig:ca_sign:ca_sign_x509}.
+\end{enumerate}
+
+
+
+
+\subsection{Index.html file}
+\label{filelisting:index}
+Below is the our index.html for our RIA. Line 5 is the Applet tag used to initialise the RIA. It has the code attribute to define the entry class file.
+Line 8 states the location of all the JAR files. This is how Bouncycastle and our Applet Jar is loaded.
+Line 9 sets the permissions parameter to `all-permissions'. This tells the applet requires permission for system resources.
+
+\inputminted[linenos]{html}{source/index.html}
+
+
+\subsection{Policy File}
+Below is our policy files to set permissions for the Java Applet. Line 1 defines these permissions to are only utilised when the applet is accessed by the url where this policy file is allowed on. Lines 2 specifies all permissions are accessed, we could not find the correct combination of policies to add. While working on this file, we managed to get the applet running by allowing the BouncyCastle provider permission.
+
+\inputminted[linenos]{text}{source/src/.java.policy}
+
+
+\subsection{Manifest Attributes}
+
+Line 1 and 2 are automatically generated and are default attributes. Line 3 defines the `all-permissions' argument. This must match with the `param' on line 9 in section \ref{filelisting:index}. Line 4 defines the codeBase URL that this jar can be accessed from. Line 5 specifies the application's name that runs in the warning alerts that confirm the security risks for the applet.
+
+\inputminted[linenos]{text}{source/MANIFEST.txt}
+
+
+
+\subsection{Java Code}
+
+\subsubsection{Main.java}
+\inputminted[linenos]{java}{source/src/Main.java}
+
+\subsubsection{Sign.java}
+\label{filelisting:sign}
+\inputminted[linenos]{java}{source/src/Sign.java}
+
+\subsubsection{Verify.java}
+\inputminted[linenos]{java}{source/src/Verify.java}
+

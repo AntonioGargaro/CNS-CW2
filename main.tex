@@ -1,0 +1,73 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage{graphicx}
+\usepackage{cellspace}
+\usepackage{subfig}
+
+
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\newcommand\cincludegraphics[2][]{\raisebox{-0.3\height}{\includegraphics[#1]{#2}}}
+
+\usepackage[english]{babel}
+ 
+\usepackage{minted}
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.25}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large\textbf{Coursework 2 Report} \hfill \textbf{Antonio Gargaro \& Jason Broomfield} \\
+\normalsize Computer Network Security F20CN \\
+Dr. Hamish Taylor  \hfill Due Date: 23/11/18  \\
+
+\tableofcontents
+\newpage
+
+
+\newpage
+\input{content/self_signed_PGP.tex}
+
+
+
+\newpage
+\input{content/self_signed_x509.tex}
+
+%Group activities
+\newpage
+\input{content/jasons_wee_willy.tex}
+
+
+\newpage
+\input{content/ca_sign_x509.tex}
+
+
+\newpage
+\input{content/ria_sign_files.tex}
+
+
+\newpage
+\input{content/sign_ria_with_x509.tex}
+
+
+\newpage
+\input{content/sec_polis.tex}
+
+
+\newpage
+\input{content/concyy.tex}
+
+\newpage
+\input{content/file_listings.tex}
+
+
+\end{document}

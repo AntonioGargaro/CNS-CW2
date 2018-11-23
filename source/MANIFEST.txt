@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: 1.7.0_06 (Oracle Corporation)
+Permissions: all-permissions
+Codebase: http://www2.macs.hw.ac.uk
+Application-Name: RIA for F21CN
